@@ -1,7 +1,7 @@
 {
   "name": "ylba",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
-    "open-props": "^1.5.5"
+    "open-props": "^1.5.5",
+    "spotify-web-api-js": "^1.5.2"
   }
 }

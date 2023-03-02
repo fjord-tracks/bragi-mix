@@ -5,8 +5,46 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <script type="module" src="/main.js"></script>
   </head>
   <body>
-    <h1>Website Name</h1>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Home</h1>
+
+      <section>
+        <h2>Login inot your Spotify</h2>
+
+        <button id="js-login-btn">login</button>
+      </section>
+
+      <section>
+        <form id="js-seach-form">
+          <div>
+            <label for="genre">genre</label>
+
+            <input type="text" name="genre" id="genre" />
+          </div>
+
+          <div>
+            <button type="submit">Search</button>
+          </div>
+        </form>
+      </section>
+
+      <section>
+        <ul id="js-playlist-list"></ul>
+      </section>
+    </main>
+
+    <footer>Made by Alex, Ali & Mo</footer>
   </body>
 </html>
