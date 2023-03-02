@@ -1,5 +1,7 @@
 import Spotify from "spotify-web-api-js";
 
+const playlistContainerEl = document.querySelector("#js-playlist-list");
+
 // NOTE: We use this lib to create a Spotify instance.
 const s = new Spotify();
 
@@ -29,11 +31,13 @@ document.querySelector("#js-seach-form").addEventListener("submit", (event) => {
     .then((data) => {
       const playlists = data.playlists.items;
       console.log(playlists);
-      // TODO: render playlists
+
+      playlistContainerEl.innerHTML = "";
+
       playlists.forEach((playlist) => {
-        document.querySelector("#js-playlist-list").innerHTML += renderPlaylist(
-          { title: playlist.name }
-        );
+        playlistContainerEl.innerHTML += renderPlaylist({
+          title: playlist.name,
+        });
       });
     })
     .catch((error) => {
