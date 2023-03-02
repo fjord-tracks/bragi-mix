@@ -1,0 +1,63 @@
+/*!
+ * Layout
+ * Layout classes use the l- prefix to indicate they are layout classes.
+ * @tutorial https://web.dev/learn/css/layout/
+ * @example https://fed-vocational-astro-course.vercel.app/en/html-css/module-3/css-grids
+ */
+
+body {
+  margin: 0;
+  width: 100%;
+  min-width: 320px;
+  place-items: center;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: minmax(62px, auto) 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  background: var(--gradient-4);
+}
+
+.l-header {
+  display: flex;
+  flex-direction: column;
+  grid-area: header;
+  width: 100%;
+  padding: var(--size-fluid-1);
+}
+
+.l-main {
+  display: flex;
+  flex-direction: column;
+  grid-area: main;
+  width: 100%;
+  padding: var(--size-fluid-2);
+  overflow-y: auto;
+}
+
+.l-footer {
+  display: flex;
+  flex-direction: column;
+  grid-area: footer;
+  width: 100%;
+  padding: var(--size-fluid-1);
+}
+
+.l-content {
+  max-inline-size: var(--size-content-3);
+  display: flex;
+  gap: var(--size-fluid-1);
+}
+
+.l-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--gray-9);
+  padding: var(--size-fluid-3) var(--size-fluid-2);
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow-2);
+}

@@ -1,0 +1,26 @@
+/*!
+ * UI
+ * Place all your regular CSS here. If you don't know where to write your css, write it here.
+ * @tutorial https://web.dev/learn/css/flexbox/
+ * @example https://fed-vocational-astro-course.vercel.app/en/html-css/module-3/media-queries
+ */
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.c-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: var(--size-2);
+  border: 1px solid var(--grey-2);
+  border-radius: var(--radius-1);
+  box-shadow: var(--shadow-3);
+  margin: var(--size-2) 0;
+}
