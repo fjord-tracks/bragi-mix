@@ -6,28 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
     <script type="module" src="/main.js"></script>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
-      </nav>
+    <header class="l-header">
+      <section class="l-container">
+        <h1>Home</h1>
+
+        <nav>
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+        </nav>
+      </section>
     </header>
 
-    <main>
-      <h1>Home</h1>
-
-      <section>
-        <h2>Login inot your Spotify</h2>
+    <main class="l-main l-content">
+      <section class="l-container">
+        <h2>Login into your Spotify</h2>
 
         <button id="js-login-btn">login</button>
       </section>
 
-      <section>
-        <form id="js-seach-form">
+      <section class="l-container">
+        <form id="js-seach-form" class="c-form">
           <div>
             <label for="genre">genre</label>
 
@@ -40,11 +41,11 @@
         </form>
       </section>
 
-      <section>
-        <ul id="js-playlist-list"></ul>
-      </section>
+      <section id="js-playlist-list" class="l-container"></section>
     </main>
 
-    <footer>Made by Alex, Ali & Mo</footer>
+    <footer class="l-footer">
+      <section class="l-container">Made by Alex, Ali & Mo</section>
+    </footer>
   </body>
 </html>

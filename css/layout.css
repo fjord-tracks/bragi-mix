@@ -9,7 +9,7 @@ body {
   margin: 0;
   width: 100%;
   min-width: 320px;
-  place-items: flex-start;
+  place-items: center;
   min-height: 100vh;
   display: grid;
   grid-template-columns: auto;
@@ -18,6 +18,7 @@ body {
     "header"
     "main"
     "footer";
+  background: var(--gradient-4);
 }
 
 .l-header {
@@ -34,6 +35,7 @@ body {
   grid-area: main;
   width: 100%;
   padding: var(--size-fluid-2);
+  overflow-y: auto;
 }
 
 .l-footer {
@@ -45,11 +47,17 @@ body {
 }
 
 .l-content {
-  flex: 1 0 auto;
+  max-inline-size: var(--size-content-3);
+  display: flex;
+  gap: var(--size-fluid-1);
 }
 
 .l-container {
   width: 100%;
   max-width: 1000px;
-  margin: 40px auto 0 auto;
+  margin: 0 auto;
+  background: var(--gray-9);
+  padding: var(--size-fluid-3) var(--size-fluid-2);
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow-2);
 }

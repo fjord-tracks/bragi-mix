@@ -31,7 +31,9 @@ document.querySelector("#js-seach-form").addEventListener("submit", (event) => {
       console.log(playlists);
       // TODO: render playlists
       playlists.forEach((playlist) => {
-        document.querySelector("#js-playlist-list").innerHTML += playlist.name;
+        document.querySelector("#js-playlist-list").innerHTML += renderPlaylist(
+          { title: playlist.name }
+        );
       });
     })
     .catch((error) => {
@@ -58,3 +60,10 @@ async function loginSpotifyUser() {
 }
 
 // TODO: Create a function that renders the playlists
+function renderPlaylist({ title = "No title" }) {
+  return `
+    <div class="c-card">
+      <h3>${title}</h3>
+    </div>
+  `;
+}

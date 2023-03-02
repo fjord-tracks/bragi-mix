@@ -3,6 +3,7 @@
 
 /* optional imports that use the props */
 @import "open-props/normalize";
+@import "open-props/buttons";
 @import "animate.css";
 
 @import "css/variables.css";

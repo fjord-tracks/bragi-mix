@@ -5,11 +5,8 @@
  */
 
 .c-form {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: var(--spacing-1);
-  padding: var(--spacing-1);
-  background-color: var(--color-white);
-  border-radius: var(--radius-1);
-  box-shadow: var(--shadow-1);
+  display: flex;
+  gap: var(--size-fluid-1);
+  padding: var(--size-fluid-1);
+  flex-direction: column;
 }
