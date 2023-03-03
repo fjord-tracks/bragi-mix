@@ -6,6 +6,8 @@ This project was bootstrapped with Vite.
 
 ## Resources
 
+helloo
+
 - [Design](_LINK_TO_FIGMA_)
 - [Production deploy](_LINK_TO_WEBSITE_)
 - [Deployment CI](_LINK_TO_NETLIFY_VERCEL_DASHBOARD_)
@@ -67,5 +69,5 @@ Make sure you go through this checklist before submitting your project to Moodle
 ## Authors
 
 - _YOURE_NAME_ (@_your_github_username_)
-- _YOURE_NAME_ (@_your_github_username_)
+- Ali(@_your_github_username_)
 - Monde Sineke (@S3ak)
