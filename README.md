@@ -7,8 +7,8 @@ This project was bootstrapped with Vite.
 ## Resources
 
 - [Design](_LINK_TO_FIGMA_)
-- [Production deploy](_LINK_TO_WEBSITE_)
-- [Deployment CI](_LINK_TO_NETLIFY_VERCEL_DASHBOARD_)
+- [Production deploy](https://bragi-mix.netlify.app/)
+- [Deployment CI](https://app.netlify.com/sites/bragi-mix/overview)
 - [API Docs](https://developer.spotify.com/documentation/web-api/reference/#/operations/search)
 
 ## Report
