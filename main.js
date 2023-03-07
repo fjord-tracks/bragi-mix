@@ -1,24 +1,45 @@
 import Spotify from "spotify-web-api-js";
 
 const playlistContainerEl = document.querySelector("#js-playlist-list");
+const loginContainerEl = document.querySelector("#js-login-holder");
+const randNavContainerEl = document.querySelector("#js-rand-nav-holder");
 
 // NOTE: We use this lib to create a Spotify instance.
 const s = new Spotify();
 
 // NOTE: We get the access token for the client from the callback URI issued when user logs into spotify.
-const accessToken = new URLSearchParams(
-  window.location.hash.replace("#", "")
-).get("access_token");
+let cachedAccessToken = localStorage.getItem("access_token");
+
+const accessToken =
+  cachedAccessToken ??
+  new URLSearchParams(window.location.hash.replace("#", "")).get(
+    "access_token"
+  );
 
 if (accessToken) {
-  // TODO: Hide login button
+  cachedAccessToken = localStorage.setItem("access_token", accessToken);
+
   s.setAccessToken(accessToken);
+  loginContainerEl.classList.add("is-hidden");
+  randNavContainerEl.innerHTML = `
+  <a href="/randSong.html">randomizer</a>
+  <a href="">playlists</a>
+  <button id="js-rand-btn" class="btn">randomize</button>
+  `;
 } else {
-  // TODO: Show login button
+  loginContainerEl.classList.remove("is-hidden");
 }
+
+const randBtn = document.querySelector("#js-rand-btn");
+console.log(randBtn);
+
+// randBtn.addEventListener("click", () => {
+//   randomizer();
+// });
 
 // TODO: Add event listener to login button only if user is not logged in
 document.querySelector("#js-login-btn").addEventListener("click", () => {
+  // ???calling a function with a arg that is never used. func does not take an arg???
   loginSpotifyUser(s.setAccessToken);
 });
 
@@ -31,6 +52,7 @@ document.querySelector("#js-seach-form").addEventListener("submit", (event) => {
     .then((data) => {
       const playlists = data.playlists.items;
       console.log(playlists);
+      // console.log(data);
 
       playlistContainerEl.innerHTML = "";
 
@@ -71,3 +93,18 @@ function renderPlaylist({ title = "No title" }) {
     </div>
   `;
 }
+
+// console.log(s.getTrack);
+
+// function randomizer() {
+//   // a random number between 0 and 20. replace 20 with response limit
+//   const randNum = Math.floor(Math.random() * 20);
+//   //  Problem: the URI is unique for each song, so rand number wont work here.
+//   // we need to first get a catalog back and then use the rand number. but how?
+//   s.getTrack(randNum).then((tracks) => {
+//     console.log(tracks);
+//   });
+//   playlistContainerEl.innerHTML = `
+//   <h3></h3>
+//   `;
+// }
