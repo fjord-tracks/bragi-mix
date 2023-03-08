@@ -47,7 +47,7 @@ document.querySelector("#js-seach-form").addEventListener("submit", (event) => {
   event.preventDefault();
 
   const genre = event.target.querySelector("#genre").value;
-
+  // s.searchPlaylists("NO", "market")
   s.searchPlaylists(genre)
     .then((data) => {
       const playlists = data.playlists.items;
@@ -93,18 +93,3 @@ function renderPlaylist({ title = "No title" }) {
     </div>
   `;
 }
-
-// console.log(s.getTrack);
-
-// function randomizer() {
-//   // a random number between 0 and 20. replace 20 with response limit
-//   const randNum = Math.floor(Math.random() * 20);
-//   //  Problem: the URI is unique for each song, so rand number wont work here.
-//   // we need to first get a catalog back and then use the rand number. but how?
-//   s.getTrack(randNum).then((tracks) => {
-//     console.log(tracks);
-//   });
-//   playlistContainerEl.innerHTML = `
-//   <h3></h3>
-//   `;
-// }

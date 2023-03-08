@@ -67,5 +67,5 @@ Make sure you go through this checklist before submitting your project to Moodle
 ## Authors
 
 - _YOURE_NAME_ (@_your_github_username_)
-- Ali Nough(@AliNough)
+- Ali Nough (@AliNough)
 - Monde Sineke (@S3ak)
