@@ -1,19 +1,17 @@
 # YLBA - A Spotify Web Tool
 
+The purpose of this project is to encourage taste makers, producers and beat makers to find obscure and non mainstream sounds.
+
 This is a vanilla website that displays a list of playlits and songs based on the users search criteria.
 
 This project was bootstrapped with Vite.
 
 ## Resources
 
-- [Design](_LINK_TO_FIGMA_)
+- [TODO: Design](_LINK_TO_FIGMA_)
 - [Production deploy](https://bragi-mix.netlify.app/)
 - [Deployment CI](https://app.netlify.com/sites/bragi-mix/overview)
 - [API Docs](https://developer.spotify.com/documentation/web-api/reference/#/operations/search)
-
-## Report
-
-_ADD_YOUR_REPORT_HERE_
 
 ## Getting Started
 
@@ -42,9 +40,9 @@ Make sure you go through this checklist before submitting your project to Moodle
 - [ ] I've removed all todo notes in code.
 - [ ] I've removed all console logs in code.
 - [x] Code is formatted correctly.
+- [x] My code is indented correctly.
 - [ ] There are no red underlines in VSCode.
 - [ ] There are no error messages in the terminal when I run the project.
-- [x] My code is indented correctly.
 - [ ] I've used used [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 - [ ] I've checked off every todo in this README.
 
