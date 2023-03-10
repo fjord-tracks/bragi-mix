@@ -100,7 +100,8 @@ transform-origin: 0% 100%;
     );
     background-position: 0% 0%;
     background-size: 2vmin 2vmin;
-    height: calc(100% - 10vmin);
+    /* height: calc(100% - 10vmin); */
+    height: 100%;
     width: 100%;
     padding: 5vmin;
     transition: background-position 350ms ease;
