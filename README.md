@@ -62,6 +62,10 @@ Make sure you go through this checklist before submitting your project to Moodle
 - [Animate.css](https://animate.style/) - Just-add-water CSS animations
 - [Spotify-web-api-js](https://www.npmjs.com/package/spotify-web-api-js)
 
+## Tutorials & Reading material
+
+- [storing tokens](https://blog.ropnop.com/storing-tokens-in-browser/)
+
 ## Authors
 
 - Ali Nough (@AliNough)

@@ -1,20 +1,22 @@
-import Spotify from "spotify-web-api-js";
-// import Spotify from "../node_modules/spotify-web-api-js/src/typings/spotify-web-api";
+import s from "../main.js";
 
 const generateBtn = document.querySelector("#js-gnrt-btn");
 const resultHolder = document.querySelector("#js-res-holder");
-const yearInput = document.querySelector("#js-yr-input");
-console.log(resultHolder);
+const songPreview = document.querySelector("#js-iframe");
+// const yearInput = document.querySelector("#js-yr-input");
 
 generateBtn.addEventListener("click", () => {
-  randomizer(yearInput.value);
+  getSong();
 });
 
-const accessToken = localStorage.getItem("access_token");
-console.log(accessToken);
+function getSong() {
+  s.searchTracks("chill", { market: "NO" }).then((data) => {
+    console.log(data);
+    const song = data.tracks.items[0].preview_url;
+    songPreview.src = song;
+  });
+}
 
-const dataBase = new Spotify();
-console.log(dataBase);
 // const accessToken = new URLSearchParams(
 //   window.location.hash.replace("#", "")
 // ).get("access_token");

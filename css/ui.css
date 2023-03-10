@@ -24,3 +24,17 @@
   box-shadow: var(--shadow-3);
   margin: var(--size-2) 0;
 }
+
+.c-nav-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.c-song-preview-window {
+  width: 80%;
+  height: 80%;
+  min-height: 20vh;
+  margin-top: 3em;
+}
