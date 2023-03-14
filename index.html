@@ -4,33 +4,35 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <script type="module" src="/main.js"></script>
+    <title>Bragi Mix</title>
+    <script type="module" src="/components/Header.js"></script>
+    <script type="module" defer src="/main.js"></script>
+    <script type="module" defer src="/js/index.js"></script>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <header class="l-header">
       <section class="l-container">
-        <h1>Home</h1>
+        <div class="c-nav-controls">
+          <h1>Home</h1>
 
-        <nav>
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <!-- <a href="/randSong.html">Randomizer</a> -->
-        </nav>
+          <div class="u-row">
+            <nav>
+              <a href="/">Home</a>
+              <a href="/randomizer.html">Randomizer</a>
+            </nav>
+
+            <button id="js-login-btn">Sign In</button>
+            <button id="js-logout-btn" data-is-protected="true">Log out</button>
+          </div>
+        </div>
       </section>
     </header>
 
     <main class="l-main l-content">
       <section id="js-rand-nav-holder" class="l-container"></section>
-      <section id="js-login-holder" class="l-container">
-        <div class="">
-          <h2>Login into your Spotify</h2>
-          <button id="js-login-btn">login</button>
-        </div>
-      </section>
 
-      <section class="l-container">
+      <section class="l-container" data-is-protected="true">
         <form id="js-seach-form" class="c-form">
           <div>
             <label for="genre">genre</label>

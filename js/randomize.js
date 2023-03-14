@@ -1,40 +1,96 @@
-import Spotify from "spotify-web-api-js";
-// import Spotify from "../node_modules/spotify-web-api-js/src/typings/spotify-web-api";
+import s from "../main.js";
+
+import { GENRES } from "./constants.js";
 
 const generateBtn = document.querySelector("#js-gnrt-btn");
 const resultHolder = document.querySelector("#js-res-holder");
-const yearInput = document.querySelector("#js-yr-input");
-console.log(resultHolder);
+// const resultHolder2 = document.querySelector("#js-res-holder-2");
+// const songPreview = document.querySelector("#js-iframe");
+const countryInp = document.querySelector("#js-country-input");
+const yearCalInput = document.querySelector("#js-yr-cal-input");
+const genreInput = document.querySelector("#js-genre-input");
+const genresList = document.querySelector("#js-genres-list");
+// const srchTypeInp = document.querySelector("#js-search-type-input");
 
-generateBtn.addEventListener("click", () => {
-  randomizer(yearInput.value);
+let selectedYear = "1950";
+let selectedGenre = "jazz";
+// let market = "NO";
+let srchQ = `year:${selectedYear} genre:${selectedGenre}`;
+// let srchQ = `isrc:${market} year:${selectedYear} genre:${selectedGenre}`;
+
+genresList.innerHTML = GENRES.map(
+  (genre) => `<option value=${genre}>${genre}</option>`
+);
+
+yearCalInput.addEventListener("change", (event) => {
+  selectedYear = event.target.value.substring(0, 4);
+  srchQ = `year:${selectedYear} genre:${selectedGenre}`;
 });
 
-const accessToken = localStorage.getItem("access_token");
-console.log(accessToken);
+genreInput.addEventListener("change", (event) => {
+  selectedGenre = event.target.value;
+  srchQ = `isrc:JP year:${selectedYear} genre:${selectedGenre}`;
+});
 
-const dataBase = new Spotify();
-console.log(dataBase);
-// const accessToken = new URLSearchParams(
-//   window.location.hash.replace("#", "")
-// ).get("access_token");
+// countryInp.addEventListener("change", (event) => {
+//   market = event.target.value;
+//   srchQ = `isrc:${market} year:${selectedYear} genre:${selectedGenre}`;
+// });
+
+generateBtn.addEventListener("click", getSong);
+
+const resultLmt = 50;
+// const searchType = ["track"];
+const optns = {
+  limit: resultLmt,
+  market: countryInp.value,
+  safeSearch: true,
+};
+
+function getSong() {
+  const randNum = Math.floor(Math.random() * (resultLmt - 1));
+
+  s.searchTracks(srchQ, optns).then((data) => {
+    console.log(data);
+
+    if (data.tracks.items.length === 0) {
+      resultHolder.innerHTML = `
+      <h2>There were no ${selectedGenre} in ${selectedYear}'s</h2>
+      <h4>Please select another genre or year</h4>
+      `;
+      return;
+    }
+
+    const item = data.tracks.items[randNum];
+    const song = item.preview_url;
+    console.log(song);
+
+    console.log(item.album.images[0].url);
+
+    resultHolder.innerHTML = `
+    <img src="${item.album.images[0].url}" alt="pix">
+    <audio class="audio-player" controls id="js-song-preview-container">
+      <source src="${song}" id="js-song-preview" type="audio/mpeg">
+    </audio>
+    <h3>${item.name} - ${item.artists[0].name}</h3>
+    <h5>ID: ${randNum}</h5>
+    <a href="${item.uri}">Open on Spotify</a>
+    `;
+  });
+
+  // s.search(srchQ, searchType, optns).then((data) => {
+  //   console.log(data);
+  //   const item = data.tracks.items[randNum];
+
+  //   resultHolder2.innerHTML = `
+  //   <h3>${item.name} - ${item.artists[0].name}</h3>
+  //   <h5>ID: ${randNum}</h5>
+  //   <a href="${item.uri}">Open on Spotify</a>
+  //   `;
+  // });
+}
 
 // First get a list of songs from the country (Norway).
 // From the list pick a random song and get the id
 // get the song URI using the Id https://jmperezperez.com/spotify-web-api-js/#src-spotify-web-api.js-constr.prototype.gettrack
-
-function randomizer(yrInput = 0) {
-  // randNum>> a random number between 0 and 19. replace 19 with response limit
-  resultHolder.innerHTML = "";
-  const randNum = Math.floor(Math.random() * 20);
-  console.log(randNum);
-  //  Problem: the URI is unique for each song, so rand number wont work here.
-  // we need to first get a catalog back and then use the rand number. but how?
-  // dataBase.getCategories().then((tracks) => {
-  //   console.log(tracks);
-  // });
-  resultHolder.innerHTML = `
-  <h3>rand.nr: ${randNum}. Year input: ${yrInput}</h3>
-  `;
-  console.log(resultHolder);
-}
+// https://api.spotify.com/v1/search?q=year:YEAR&type=track&limit=50&offset=OFFSET

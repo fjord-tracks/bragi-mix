@@ -6,7 +6,8 @@
 
 .c-form {
   display: flex;
+  flex-direction: column;
+  width: 90%;
   gap: var(--size-fluid-1);
   padding: var(--size-fluid-1);
-  flex-direction: column;
 }
