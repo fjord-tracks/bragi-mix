@@ -1,5 +1,5 @@
-const subtitle = document.getElementsByClassName("card-subtitle")[0];
-console.log(subtitle);
+const [subtitle, subtitle1, subtitle2] =
+  document.getElementsByClassName("card-subtitle");
 const createWord = (text, index) => {
   const word = document.createElement("span");
 
@@ -12,8 +12,23 @@ const createWord = (text, index) => {
   return word;
 };
 
-const addWord = (text, index) => subtitle.appendChild(createWord(text, index));
+const addWord = (text, element, index) =>
+  element.appendChild(createWord(text, index));
 
-const createSubtitle = (text) => text.split(" ").map(addWord);
+const createSubtitle = (text, element) =>
+  text.split(" ").map((word, index) => addWord(word, element, index));
 
-createSubtitle("But in a much more real sense, I have no idea what I'm doing.");
+createSubtitle(
+  "With this tool, you can easily search for songs by year and genre and get a random selection to add to your playlist. It's the perfect way to discover new music that you might have never found on your own. This is a perfect tool for everyone and specially music producer to find samples.",
+  subtitle
+);
+
+createSubtitle(
+  "Well, I hope you enjoyed hovering over nothing, because that function is still in its cocoon stage!.But hey, if you ever need to practice your hovering technique, feel free to hover over our other features in the meantime. We won't judge.",
+  subtitle1
+);
+
+createSubtitle(
+  "Don't worry, your hovering skills are still top-notch. Unfortunately, that function isn't quite ready to spread its wings yet.",
+  subtitle2
+);
