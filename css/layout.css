@@ -18,7 +18,22 @@ body {
     "header"
     "main"
     "footer";
-  background: var(--gradient-4);
+  /* background-image: linear-gradient(to right top, #94b29f, #839582, #717a69, #5d6052, #48473e, #4c493d, #514b3c, #574c3b, #7b674b, #a3845c, #cda16f, #fabe82); */
+  background-image: linear-gradient(
+    to left bottom,
+    #a6a6a6,
+    #858585,
+    #656565,
+    #464646,
+    #2a2a2a,
+    #2a2a2a,
+    #2a2a2a,
+    #2a2a2a,
+    #464646,
+    #656565,
+    #858585,
+    #a6a6a6
+  );
 }
 
 .l-header {
@@ -33,9 +48,20 @@ body {
   display: flex;
   flex-direction: column;
   grid-area: main;
+  align-self: stretch;
   width: 100%;
   padding: var(--size-fluid-2);
   overflow-y: auto;
+}
+
+.l-main_section {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.l-main_heading {
+  flex: 0 1 auto;
 }
 
 .l-footer {
@@ -60,4 +86,24 @@ body {
   padding: var(--size-fluid-3) var(--size-fluid-2);
   border-radius: var(--radius-2);
   box-shadow: var(--shadow-2);
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 100%;
+}
+
+.l-container h1 {
+  font-size: 2rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+.navbar ul li {
+  text-decoration: none;
 }

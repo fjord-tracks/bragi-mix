@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.card {
+cursor: pointer;
+transform: skew(-10deg);
+transform-origin: 0% 100%;
+z-index: 1;
+position: relative;
+flex: 1 1 33%;
+height: auto;
+transform-origin: 0% 100%;
+
+}
+
+.c-card-menu-list{
+    flex: 1;
+    display: flex;
+    width: 83%;
+    margin: 0 auto;
+}
+.card:hover:before {
+    background-position: 100% 100%;
+    transform: scale(1.08, 1.03);
+}
+
+
+.card1:before{
+    background: linear-gradient(
+    130deg,
+    #00000090 0% 33%, 
+    #000000 50%,
+    #1255c8 60%,
+    #1297c8, 90%,
+    #1DB954 100%
+);
+    background-position: 0% 0%;
+    background-size: 300% 300%;    
+    content: "";
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    transition: background-position 600ms ease;
+    width: 100%;
+    z-index: 1;
+}
+
+.card2:before{
+    background: linear-gradient(
+        130deg,
+        #00000090 0% 33%, 
+        #000000 50%,
+        #0E8388 60%,
+        #0E8388, 90%,
+        #2C3333 100%
+    );
+    background-position: 0% 0%;
+    background-size: 300% 300%;    
+    content: "";
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    transition: background-position 600ms ease;
+    width: 100%;
+    z-index: 1;
+}
+
+
+.card3:before{
+    background: linear-gradient(
+        130deg,
+        #00000090 0% 33%, 
+        #000000 50%,
+        #e68901 60%,
+        #5a0079 100% 
+        
+    );
+    background-position: 0% 0%;
+    background-size: 300% 300%;    
+    content: "";
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    transition: background-position 600ms ease;
+    width: 100%;
+    z-index: 1;
+}
+
+
+
+
+.card:hover .card-background{
+    background-position: -10% -0%;
+    }
+
+
+
+
+
+.card-title,
+.card-subtitle {
+    color: white;
+    font-family:"Genos", sans-serif ;
+    font-weight: 400;
+    margin: 0px;
+    position: relative;
+    z-index: 201;
+}
+
+.card-title{
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.card-subtitle{
+    font-size: 1.2rem;
+}
+
+.card-subtitle-word{
+    opacity: 0;
+    display: inline-block;
+    margin: 0vmin 0.3vmin;
+    position: relative;
+    transform: translateY(40%);
+    transition: none;
+    z-index: 300;
+    border: 1px solid #F5D365;
+}
+
+
+.c-card-menu-item:hover .card-subtitle-word 
+{
+  opacity: 1;
+  transform: translateY(0%);
+  transition: transform 200ms linear, opacity 0ms, cubic-bezier(0.09, 0.6, 0.15, 0.9) 200ms;
+  position: relative;
+    border: white;}
+
+
+
+.headtext {
+    text-align: center;
+    font-size: 4rem;
+    font-family: "Genos", sans-serif;
+    font-weight: 500;
+}
+
+.card-background {
+    height: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    background: radial-gradient(
+        rgba(255, 255, 255, 0.2) 8%,
+        transparent 8%
+    );
+    background-position: 0% 0%;
+    background-size: 2vmin 2vmin;
+    /* height: calc(100% - 10vmin); */
+    width: 100%;
+    transition: background-position 350ms ease;
+    z-index: 100;
+}
+
+
+
+/* 
+.card:hover > .card-content > .card-subtitle,
+.card-subtitle:hover,
+.card:hover .card-subtitle,
+.card:hover > .card-title > .card-subtitle, */
+
+

@@ -6,4 +6,11 @@
 
 :root {
   /* Add your CSS variables here */
+  /* Colors */
+  --bg-color: #000000;
+  --dot-color: rgba(255, 255, 255, 0.2);
+
+  /* Dimensions */
+  --dot-size: 1px;
+  --dot-space: 23px;
 }
